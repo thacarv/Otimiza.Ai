@@ -1,0 +1,18 @@
+/* ----- TEMAS DO CURRÍCULO ----- */
+.theme-classic { font-family: "Times New Roman", Times, serif; color: #000; }
+.theme-classic h1, .theme-classic h2 { font-family: "Georgia", serif; border-bottom: 1px solid #ccc; padding-bottom: 4px; margin-bottom: 8px;}
+
+.theme-modern { font-family: "Inter", sans-serif; color: #1f2937; }
+.theme-modern h2 { color: #1e40af; border-bottom: 2px solid #bfdbfe; padding-bottom: 4px; text-transform: uppercase; font-size: 1.1em; margin-bottom: 12px;}
+
+.theme-minimalist { font-family: "Arial", sans-serif; color: #111; }
+.theme-minimalist h2 { font-size: 1.25em; font-weight: bold; margin-top: 16px; margin-bottom: 8px; border-bottom: 1px solid #000; padding-bottom: 2px;}
+
+.theme-tech { font-family: ui-monospace, Consolas, monospace; color: #333; }
+.theme-tech h2 { color: #059669; border-bottom: 1px dashed #059669; padding-bottom: 4px; margin-bottom: 12px; font-size: 1.1em; }
+.theme-tech h2::before { content: "> "; font-weight: bold; }
+
+.theme-startup { font-family: "Segoe UI", sans-serif; color: #374151; display: flex; gap: 2rem; }
+.theme-startup .sidebar { width: 30%; background-color: #f8fafc; padding: 1.5rem; border-radius: 0.5rem; }
+.theme-startup .main-content { width: 70%; }
+.theme-startup h2 { font-size: 1.1em; font-weight: 700; color: #0f172a; border-bottom: 2px solid #cbd5e1; padding-bottom: 0.5rem; margin-bottom: 0.75rem; text-transform: uppercase;}
