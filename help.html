@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">Otimiza.ai</title>
+    <link rel="shortcut icon" href="./assets/media/favicon-otimiza-ai.png" type="image/x-icon">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body
+    class="bg-slate-900 text-slate-300 min-h-screen flex flex-col font-sans selection:bg-blue-500 selection:text-white">
+
+    <main id="app-container"
+        class="flex-grow max-w-5xl mx-auto w-full p-4 flex flex-col items-center justify-start mt-4 mb-10">
+
+        <div
+            class="w-full bg-slate-800 rounded-xl shadow-2xl overflow-hidden border border-slate-700 flex flex-col min-h-[600px]">
+
+            <!-- Cabeçalho do Terminal -->
+            <div class="bg-slate-950 px-4 py-3 flex items-center gap-2 border-b border-slate-700 select-none">
+                <div class="flex gap-2 w-20">
+                    <div class="w-3.5 h-3.5 rounded-full bg-red-500"></div>
+                    <div class="w-3.5 h-3.5 rounded-full bg-yellow-500"></div>
+                    <div class="w-3.5 h-3.5 rounded-full bg-green-500"></div>
+                </div>
+                <div
+                    class="text-xs text-slate-400 font-mono text-center flex-grow flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-terminal text-blue-400"></i> cv-generator-v2.0 <span
+                        class="text-slate-500">help.md</span>
+                </div>
+                <div class="w-20"></div>
+            </div>
+
+            <!-- Conteúdo do Terminal -->
+            <div class="p-8 flex-grow flex flex-col justify-center relative">
+
+                <!-- PASSO 1: Intro -->
+                <div id="step-1" class="step-card w-full max-w-2xl mx-auto text-center fade-in">
+                    <div class="text-6xl text-blue-500 mb-6"><img src="./assets/media/logo-otimiza-ai.png"
+                            class="w-48 mx-auto" style="filter: grayscale(100) brightness(500)"></div>
+                    <h1 class="text-xl font-bold mb-4 text-white font-mono">>_ help_json_schema</h1>
+                    <p class="text-slate-400 mb-4 text-lg">Documentação Técnica para Preenchimento de Dados</p>
+                    
+                    <button onclick="window.location.href = './'" class="text-slate-500 hover:text-slate-300 font-mono text-sm mb-8"><i class="fa-solid fa-arrow-left"></i> voltar </button>
+                </div>
+
+                <!-- PASSO 2: Informações -->
+                <div id="step-2"
+                    class="step-card w-full mx-auto text-center fade-in flex flex-grow border-t border-slate-400 pt-10">
+
+                    <!-- Navegação Lateral (Estilo VS Code / Sidebar do modelo) -->
+                    <div class="w-64 sidebar-nav p-4 overflow-y-auto hidden md:block bg-slate-900/40">
+                        <div class="flex items-center gap-2 mb-6 px-2">
+                            <i class="fa-solid fa-folder-open text-blue-400 text-xs"></i>
+                            <h3 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Seções</h3>
+                        </div>
+                        <nav class="space-y-1 text-xs font-mono">
+                            <a href="#basics"
+                                class="flex items-center gap-2 text-slate-400 hover:text-blue-400 py-2 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                <i class="fa-solid fa-file-code opacity-50"></i> basics.json
+                            </a>
+                            <a href="#contacts"
+                                class="flex items-center gap-2 text-slate-400 hover:text-blue-400 py-2 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                <i class="fa-solid fa-link opacity-50"></i> contact_links.md
+                            </a>
+                            <a href="#skills"
+                                class="flex items-center gap-2 text-slate-400 hover:text-blue-400 py-2 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                <i class="fa-solid fa-gears opacity-50"></i> technical_skills.log
+                            </a>
+                            <a href="#projects"
+                                class="flex items-center gap-2 text-slate-400 hover:text-blue-400 py-2 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                <i class="fa-solid fa-diagram-project opacity-50"></i> personal_projects.json
+                            </a>
+                            <a href="#experience"
+                                class="flex items-center gap-2 text-slate-400 hover:text-blue-400 py-2 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                <i class="fa-solid fa-briefcase opacity-50"></i> history_data.json
+                            </a>
+                            <a href="#cover"
+                                class="flex items-center gap-2 text-slate-400 hover:text-blue-400 py-2 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                <i class="fa-solid fa-envelope-open-text opacity-50"></i> cover_letter.txt
+                            </a>
+                        </nav>
+                    </div>
+
+                    <!-- Painel de Leitura (Scroll suave e estilizado) -->
+                    <div class="flex-grow p-8 overflow-y-auto bg-slate-900/20">
+
+                        <!-- Introdução -->
+                        <div id="basics" class="doc-section mb-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-1.5 h-6 bg-blue-500 rounded-full"></div>
+                                <h2 class="text-xl font-bold text-white uppercase tracking-wider">Informações
+                                    Básicas</h2>
+                            </div>
+                            <p class="text-sm text-slate-400 mb-6 leading-relaxed">As chaves raiz definem o
+                                esqueleto do seu currículo. Certifique-se de preencher o <code
+                                    class="text-blue-400">title</code> para garantir uma boa indexação por ATS.</p>
+                            <pre><code>{
+  "name": "Seu Nome Completo",
+  "title": "Seu Cargo (Ex: Software Engineer)",
+  "objective": "Um breve resumo das suas ambições...",
+  "additional_info": "Cursos extras, voluntariado ou hobbies."
+}</code></pre>
+                        </div>
+
+                        <!-- Contatos -->
+                        <div id="contacts" class="doc-section mb-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-1.5 h-6 bg-blue-500 rounded-full"></div>
+                                <h2 class="text-xl font-bold text-white uppercase tracking-wider">Contatos e Links
+                                </h2>
+                                <span class="badge">Autolink Engine</span>
+                            </div>
+                            <p class="text-sm text-slate-400 mb-6 leading-relaxed">O motor de renderização detecta
+                                automaticamente o formato dos dados para gerar links funcionais:</p>
+                            <ul class="space-y-3 text-sm mb-6 font-mono text-slate-500">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500/50"></i>
+                                    <b class="text-slate-300">email:</b> vira um link mailto</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500/50"></i>
+                                    <b class="text-slate-300">whatsapp/phone:</b> link para chat direto</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500/50"></i>
+                                    <b class="text-slate-300">linkedin/github:</b> URLs tratadas para abertura em
+                                    nova aba</li>
+                            </ul>
+                            <pre><code>"contact": {
+  "location": "São Paulo, SP",
+  "whatsapp": "(11) 99999-9999",
+  "email": "contato@dev.com",
+  "linkedin": "linkedin.com/in/perfil"
+}</code></pre>
+                        </div>
+
+                        <!-- Habilidades -->
+                        <div id="skills" class="doc-section mb-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-1.5 h-6 bg-blue-500 rounded-full"></div>
+                                <h2 class="text-xl font-bold text-white uppercase tracking-wider">Habilidades
+                                    Técnicas</h2>
+                            </div>
+                            <p
+                                class="text-sm text-slate-400 mb-4 bg-slate-800/80 p-4 border-l-2 border-blue-500 font-mono">
+                                // Cada entrada é renderizada dinamicamente.<br>
+                                // O nome da chave vira o título do grupo.
+                            </p>
+                            <pre><code>"technical_skills": {
+  "linguagens": ["Go", "Python", "SQL"],
+  "infraestrutura": ["AWS", "Docker", "K8s"]
+}</code></pre>
+                            <div class="mt-4 p-4 border border-slate-700 rounded-lg bg-slate-900/50">
+                                <p class="text-[10px] uppercase text-slate-500 mb-2 font-bold tracking-widest">
+                                    Resultado Visual:</p>
+                                <div class="text-xs">
+                                    <p><b class="text-blue-400">Linguagens:</b> Go, Python, SQL</p>
+                                    <p><b class="text-blue-400">Infraestrutura:</b> AWS, Docker, K8s</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projetos -->
+                        <div id="projects" class="doc-section mb-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-1.5 h-6 bg-blue-500 rounded-full"></div>
+                                <h2 class="text-xl font-bold text-white uppercase tracking-wider">Projetos Pessoais
+                                </h2>
+                            </div>
+                            <p class="text-sm text-slate-400 mb-6 leading-relaxed">Ideal para destacar portfólio. O
+                                campo <code class="text-blue-400">tech</code> permite listar as stacks utilizadas em
+                                formato de tags.</p>
+                            <pre><code>"projects": [
+  {
+    "name": "API de Gestão",
+    "github": "https://github.com/perfil/api",
+    "tech": ["Node.js", "Redis"],
+    "description": "Microsserviço de alta disponibilidade."
+  }
+]</code></pre>
+                        </div>
+
+                        <!-- Experiência -->
+                        <div id="experience" class="doc-section mb-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-1.5 h-6 bg-blue-500 rounded-full"></div>
+                                <h2 class="text-xl font-bold text-white uppercase tracking-wider">Histórico
+                                    Profissional</h2>
+                            </div>
+                            <p class="text-sm text-slate-400 mb-6 leading-relaxed">Organize por ordem cronológica
+                                inversa (do mais recente para o mais antigo).</p>
+                            <pre><code>"experience": [
+  {
+    "company": "Empresa S/A",
+    "role": "Desenvolvedor Pleno",
+    "period": "2021 - Presente",
+    "description": "Responsável por X e Y..."
+  }
+]</code></pre>
+                        </div>
+
+                        <!-- Carta de Apresentação -->
+                        <div id="cover" class="doc-section mb-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-1.5 h-6 bg-blue-500 rounded-full"></div>
+                                <h2 class="text-xl font-bold text-white uppercase tracking-wider">Cover Letter</h2>
+                            </div>
+                            <p class="text-sm text-slate-400 mb-4 italic">
+                                O sistema detecta a presença desta chave e insere automaticamente uma quebra de
+                                página para impressão.
+                            </p>
+                            <div class="bg-blue-900/10 border border-blue-500/30 p-4 rounded text-xs text-blue-300">
+                                <i class="fa-solid fa-circle-info mr-2"></i>
+                                Use <code class="font-bold text-white">\n\n</code> no JSON para representar quebras
+                                de parágrafo no texto final.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="print-container" class="resume-wrapper"></div>
+</body>
+
+</html>

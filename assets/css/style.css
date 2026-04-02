@@ -34,6 +34,14 @@
   #print-container {
     display: none;
   }
+
+  .doc-section pre{
+    text-align: left;
+  }
+
+  .resume-page{
+    padding: 1em;
+  }
 }
 
 .fade-in {

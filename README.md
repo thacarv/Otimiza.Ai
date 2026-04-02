@@ -1,6 +1,8 @@
 
 
-# Gerador de Currículos em HTML a partir de JSON
+# Otimiza.ai - Gerador de Currículos em HTML a partir de JSON
+
+![alt text](./assets/media/logo-otimiza-ai.png)
 
 Este projeto oferece uma ferramenta simples e eficiente para gerar currículos formatados em HTML, prontos para impressão ou para serem salvos como PDF, a partir de uma estrutura de dados JSON. O sistema é otimizado para compatibilidade com ATS (Applicant Tracking Systems) e permite fácil personalização visual.
 
@@ -15,7 +17,13 @@ Este projeto oferece uma ferramenta simples e eficiente para gerar currículos f
 - **Cópia de HTML:** Opção para copiar o HTML gerado para uso em outras plataformas.
 - **Títulos de Seção Visíveis na Impressão:** Os títulos de cada categoria do currículo (Objetivo, Experiência, Habilidades, etc.) são exibidos tanto na prévia quanto na impressão.
 
-![alt text](example.jpg)
+![alt text](./assets/media/tela.png)
+
+## Novidades 
+
+- **Design de Interface Tech:** A ferramenta agora roda sob uma interface imersiva inspirada em ambientes de desenvolvimento (IDE / Terminal macOS), trazendo modo escuro e navegação orientada a passos.
+- **5 Temas para o Currículo:** Escolha entre 5 temas diferentes para maior personalização do seu currículo
+- **Suporte para currículos em inglês:** Gere currículos em inglês ou português por meio da mesma estrutura JSON
 
 ## Como Usar
 
@@ -29,57 +37,71 @@ Para utilizar o gerador de currículos, siga os passos abaixo:
 6. **Copiar Texto do Currículo:** Se precisar do texto do currículo gerado, clique em "Copiar Texto do Currículo". Uma mensagem de confirmação aparecerá.
 7. **Limpar:** Para remover o JSON do campo de texto e a prévia do currículo, clique no botão "Limpar".
 
+## Prompt Recomendado para a IA
+
+```
+Você é um especialista em recrutamento tech. Eu vou te fornecer as minhas informações profissionais. Quero que você preencha o modelo JSON abaixo com os meus dados. Não modifique a estrutura do JSON original. Resuma onde for necessário para ficar objetivo e profissional. Retorne APENAS o bloco de código JSON, sem textos adicionais antes ou depois.
+
+[COLE O JSON DO SISTEMA AQUI]
+
+Meus dados: [COLE SEUS DADOS, TEXTOS OU CURRÍCULO ANTIGO AQUI]
+```
+
 ## Estrutura do JSON
 
 A seguir, a estrutura JSON esperada pelo sistema para a correta geração do currículo. É fundamental que os campos e a hierarquia sejam respeitados para que o currículo seja renderizado corretamente. Você pode pedir para uma ferramenta LLM gerar o currículo com as informações desejadas.
 
 ```
 {
-    "nome": "Fulano da Silva",
-    "titulo": "Desenvolvedor de Software Júnior | Backend | Python",
-    "contato": {
-        "localizacao": "Bairro Teste - Cidade Fictícia/UF",
-        "whatsapp": "(99) 91234-5678",
-        "email": "fulano.silva.dev@email.com",
-        "linkedin": "https://www.linkedin.com/in/fulano-silva-ficticio/",
-        "github": "https://github.com/fulanosilva"
-    },
-    "objetivo": "Busco uma oportunidade desafiadora como Desenvolvedor(a) Júnior, onde possa aplicar meus conhecimentos em desenvolvimento de software e crescer profissionalmente. Tenho grande interesse em tecnologias de backend, como Python e Django, e desejo colaborar em projetos inovadores que impactem positivamente a sociedade.",
-    "experiencia": [
-        {
-            "empresa": "TechCorp Inovação",
-            "cargo": "Estagiário de Desenvolvimento",
-            "periodo": "Jan/2024 - Dez/2024",
-            "descricao": "Atuação no desenvolvimento e manutenção de módulos de sistema usando Python e Django. Colaboração em equipes ágeis, contribuindo para a criação de APIs RESTful e integração com bancos de dados."
-        },
-        {
-            "empresa": "Soluções Digitais Ltda.",
-            "cargo": "Assistente de Suporte Técnico",
-            "periodo": "Jul/2023 - Dez/2023",
-            "descricao": "Suporte técnico a usuários de software, resolução de problemas e documentação de procedimentos. Experiência em identificação e registro de bugs, além de comunicação eficaz com equipes de desenvolvimento."
-        }
-    ],
-    "educacao": [
-        {
-            "instituicao": "Universidade da Programação",
-            "curso": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
-            "periodo": "Jan/2022 - Dez/2024"
-        },
-        {
-            "instituicao": "Escola Técnica de Tecnologia",
-            "curso": "Curso Técnico em Informática",
-            "periodo": "Jan/2020 - Dez/2021"
-        }
-    ],
-    "habilidades_tecnicas": {
-        "linguagens": [
+  "name": "Fulano da Silva",
+  "title": "Desenvolvedor Backend | Python & Go",
+  "contact": {
+      "location": "São Paulo, SP",
+      "phone": "(11) 99999-9999",
+      "whatsapp": "(11) 99999-9999",
+      "email": "fulano.dev@email.com",
+      "linkedin": "linkedin.com/in/fulano",
+      "github": "github.com/fulano"
+  },
+  "objective": "Desenvolvedor focado em escalabilidade e arquitetura de microsserviços.",
+  "experience": [
+      {
+          "company": "Tech Solutions",
+          "role": "Sênior Backend Developer",
+          "period": "2020 - Presente",
+          "description": "Liderança técnica na migração de monolito para microsserviços usando Go e AWS."
+      }
+  ],
+  "projects": [
+      {
+          "name": "Sistema de Gestão de APIs",
+          "github": "https://github.com/fulano/api-manager",
+          "tech": ["Go", "Redis", "Docker"],
+          "description": "Gateway de API de alta performance capaz de processar 10k requisições por segundo."
+      },
+      {
+          "name": "Bot de Automação de Trading",
+          "github": "https://github.com/fulano/trading-bot",
+          "tech": ["Python", "Pandas", "Binance API"],
+          "description": "Algoritmo de trading baseado em análise técnica para criptomoedas."
+      }
+  ],
+  "education": [
+      {
+          "institution": "Universidade de São Paulo",
+          "degree": "Ciência da Computação",
+          "period": "2014 - 2018"
+      }
+  ],
+  "technical_skills": {
+      "linguagens": [
             "Python",
             "JavaScript",
             "SQL",
             "HTML",
             "CSS"
         ],
-        "frameworks_bibliotecas": [
+        "frameworks_e_bibliotecas": [
             "Django",
             "Flask",
             "Node.js",
@@ -91,22 +113,20 @@ A seguir, a estrutura JSON esperada pelo sistema para a correta geração do cur
             "MySQL",
             "MongoDB"
         ],
-        "ferramentas_e_outros": [
+        "ferramentas_e_metodologias": [
             "Git",
             "Docker (Básico)",
             "VS Code",
             "Jira",
             "Metodologias Ágeis (Scrum)"
         ]
-    },
-    "idiomas": {
-        "portugues": "Nativo",
-        "ingles": "Intermediário"
-    },
-    "cursos_relevantes": [
-        "Alura - Formação Python e Django para Web",
-        "Rocketseat - Trilha Ignite Node.js",
-        "Udemy - Fundamentos de Bancos de Dados Relacionais"
-    ]
+  },
+  "languages": {
+      "Português": "Nativo",
+      "Inglês": "Avançado",
+      "Espanhol": "Básico"
+  },
+  "additional_info": "Disponibilidade para viagens e mudança de cidade.",
+  "cover_letter": "Prezada equipe,\n\nEscrevo para expressar meu interesse na posição de desenvolvedor..."
 }
 ```

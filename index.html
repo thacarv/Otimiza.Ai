@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,12 +14,16 @@
     <link rel="stylesheet" href="./assets/css/themes.css">
 
 </head>
-<body class="bg-slate-900 text-slate-300 min-h-screen flex flex-col font-sans selection:bg-blue-500 selection:text-white">
 
-    <main id="app-container" class="flex-grow max-w-5xl mx-auto w-full p-4 flex flex-col items-center justify-start mt-4 mb-10">
-        
-        <div class="w-full bg-slate-800 rounded-xl shadow-2xl overflow-hidden border border-slate-700 flex flex-col min-h-[600px]">
-            
+<body
+    class="bg-slate-900 text-slate-300 min-h-screen flex flex-col font-sans selection:bg-blue-500 selection:text-white">
+
+    <main id="app-container"
+        class="flex-grow max-w-5xl mx-auto w-full p-4 flex flex-col items-center justify-start mt-4 mb-10">
+
+        <div
+            class="w-full bg-slate-800 rounded-xl shadow-2xl overflow-hidden border border-slate-700 flex flex-col min-h-[600px]">
+
             <!-- Cabeçalho do Terminal -->
             <div class="bg-slate-950 px-4 py-3 flex items-center gap-2 border-b border-slate-700 select-none">
                 <div class="flex gap-2 w-20">
@@ -26,21 +31,25 @@
                     <div class="w-3.5 h-3.5 rounded-full bg-yellow-500"></div>
                     <div class="w-3.5 h-3.5 rounded-full bg-green-500"></div>
                 </div>
-                <div class="text-xs text-slate-400 font-mono text-center flex-grow flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-terminal text-blue-400"></i> cv-generator-v2.0 <span id="step-indicator" class="text-slate-500"></span>
+                <div
+                    class="text-xs text-slate-400 font-mono text-center flex-grow flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-terminal text-blue-400"></i> cv-generator-v2.0 <span id="step-indicator"
+                        class="text-slate-500"></span>
                 </div>
                 <div class="w-20"></div>
             </div>
 
             <!-- Conteúdo do Terminal -->
             <div class="p-8 flex-grow flex flex-col justify-center relative">
-                
+
                 <!-- PASSO 1: Intro -->
                 <div id="step-1" class="step-card w-full max-w-2xl mx-auto text-center fade-in">
-                    <div class="text-6xl text-blue-500 mb-6"><img src="./assets/media/logo-otimiza-ai.png" class="w-48 mx-auto" style="filter: grayscale(100) brightness(500)"></div>
+                    <div class="text-6xl text-blue-500 mb-6"><img src="./assets/media/logo-otimiza-ai.png"
+                            class="w-48 mx-auto" style="filter: grayscale(100) brightness(500)"></div>
                     <h1 class="sr-only">Otimiza.ai - Gerador de seu currículo profissional via JSON</h1>
                     <p class="text-slate-400 mb-8 text-lg">Pronto para gerar o seu currículo profissional via JSON?</p>
-                    <button onclick="goToStep(2)" class="bg-blue-600 hover:bg-blue-500 text-white font-mono py-3 px-10 rounded border border-blue-400 shadow-lg transition-all">
+                    <button onclick="goToStep(2)"
+                        class="bg-blue-600 hover:bg-blue-500 text-white font-mono py-3 px-10 rounded border border-blue-400 shadow-lg transition-all">
                         ./start_session
                     </button>
                 </div>
@@ -49,12 +58,16 @@
                 <div id="step-2" class="step-card w-full max-w-2xl mx-auto text-center hidden fade-in">
                     <h2 class="text-2xl font-bold mb-8 text-white font-mono">>_ select_language</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <button onclick="setLanguage('pt')" class="bg-slate-900 border border-slate-700 hover:border-blue-500 p-8 rounded-xl flex flex-col items-center gap-4 transition-all group">
-                            <img src="https://em-content.zobj.net/source/google/439/flag-brazil_1f1e7-1f1f7.png" alt="Brasil" class="w-16 h-16 object-contain">
+                        <button onclick="setLanguage('pt')"
+                            class="bg-slate-900 border border-slate-700 hover:border-blue-500 p-8 rounded-xl flex flex-col items-center gap-4 transition-all group">
+                            <img src="https://em-content.zobj.net/source/google/439/flag-brazil_1f1e7-1f1f7.png"
+                                alt="Brasil" class="w-16 h-16 object-contain">
                             <span class="font-mono text-slate-300 group-hover:text-blue-400">Português (Brasil)</span>
                         </button>
-                        <button onclick="setLanguage('en')" class="bg-slate-900 border border-slate-700 hover:border-blue-500 p-8 rounded-xl flex flex-col items-center gap-4 transition-all group">
-                            <img src="https://em-content.zobj.net/source/google/439/flag-united-states_1f1fa-1f1f8.png" alt="USA" class="w-16 h-16 object-contain">
+                        <button onclick="setLanguage('en')"
+                            class="bg-slate-900 border border-slate-700 hover:border-blue-500 p-8 rounded-xl flex flex-col items-center gap-4 transition-all group">
+                            <img src="https://em-content.zobj.net/source/google/439/flag-united-states_1f1fa-1f1f8.png"
+                                alt="USA" class="w-16 h-16 object-contain">
                             <span class="font-mono text-slate-300 group-hover:text-blue-400">English (USA)</span>
                         </button>
                     </div>
@@ -64,37 +77,54 @@
                 <div id="step-3" class="step-card w-full max-w-4xl mx-auto hidden fade-in h-full">
                     <h2 class="text-xl font-bold mb-4 text-white font-mono">>_ copy_json_schema</h2>
                     <div class="relative mb-6 h-80">
-                        <textarea id="templateTextarea" readonly class="w-full h-full p-4 bg-slate-950 text-emerald-400 rounded border border-slate-700 font-mono text-xs resize-none"></textarea>
-                        <button onclick="copyTemplate()" class="absolute top-4 right-4 bg-slate-800 hover:bg-slate-700 text-white px-3 py-1 rounded text-xs border border-slate-600 font-mono">
+                        <textarea id="templateTextarea" readonly
+                            class="w-full h-full p-4 bg-slate-950 text-emerald-400 rounded border border-slate-700 font-mono text-xs resize-none"></textarea>
+                        <button onclick="copyTemplate()"
+                            class="absolute top-4 right-4 bg-slate-800 hover:bg-slate-700 text-white px-3 py-1 rounded text-xs border border-slate-600 font-mono">
                             <span id="copyText">copy()</span>
                         </button>
                     </div>
                     <div class="flex justify-between">
-                        <button onclick="goToStep(2)" class="text-slate-500 hover:text-slate-300 font-mono text-sm"><i class="fa-solid fa-arrow-left"></i> voltar</button>
-                        <button onclick="goToStep(4)" class="bg-blue-600 hover:bg-blue-500 text-white font-mono py-2 px-6 rounded">continue()</button>
+                        <button onclick="goToStep(2)" class="text-slate-500 hover:text-slate-300 font-mono text-sm"><i
+                                class="fa-solid fa-arrow-left"></i> voltar</button>
+                        <div>
+                            <button onclick="window.location.href = 'help.html'"
+                                class="bg-slate-50 hover:bg-slate-300 text-slate-800 font-mono py-2 px-6 rounded">help()</button>
+                            <button onclick="goToStep(4)"
+                                class="bg-blue-600 hover:bg-blue-500 text-white font-mono py-2 px-6 rounded">continue()
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- PASSO 4: Entrada -->
                 <div id="step-4" class="step-card w-full max-w-4xl mx-auto hidden fade-in h-full">
                     <h2 class="text-xl font-bold mb-4 text-white font-mono">>_ paste_compiled_json</h2>
-                    <textarea id="jsonInput" placeholder='Cole o seu JSON aqui...' class="w-full h-80 p-4 bg-slate-950 text-blue-300 rounded border border-slate-700 font-mono text-xs mb-4"></textarea>
-                    <div id="jsonError" class="hidden mb-4 text-red-400 text-xs font-mono p-3 bg-red-950/30 rounded border border-red-900/50"></div>
+                    <textarea id="jsonInput" placeholder='Cole o seu JSON aqui...'
+                        class="w-full h-80 p-4 bg-slate-950 text-blue-300 rounded border border-slate-700 font-mono text-xs mb-4"></textarea>
+                    <div id="jsonError"
+                        class="hidden mb-4 text-red-400 text-xs font-mono p-3 bg-red-950/30 rounded border border-red-900/50">
+                    </div>
                     <div class="flex justify-between">
-                        <button onclick="goToStep(3)" class="text-slate-500 hover:text-slate-300 font-mono text-sm"><i class="fa-solid fa-arrow-left"></i> voltar</button>
-                        <button onclick="processJson()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-mono py-2 px-8 rounded shadow-lg">render_output()</button>
+                        <button onclick="goToStep(3)" class="text-slate-500 hover:text-slate-300 font-mono text-sm"><i
+                                class="fa-solid fa-arrow-left"></i> voltar</button>
+                        <button onclick="processJson()"
+                            class="bg-emerald-600 hover:bg-emerald-500 text-white font-mono py-2 px-8 rounded shadow-lg">render_output()</button>
                     </div>
                 </div>
 
                 <!-- PASSO 5: Pré-visualização -->
                 <div id="step-5" class="step-card w-full hidden fade-in flex-col h-full">
-                    <div class="bg-slate-900 border border-slate-700 p-3 rounded-lg mb-4 flex flex-wrap justify-between items-center gap-4">
+                    <div
+                        class="bg-slate-900 border border-slate-700 p-3 rounded-lg mb-4 flex flex-wrap justify-between items-center gap-4">
                         <div class="flex items-center gap-3">
-                            <button onclick="restartApp()" class="bg-red-900/20 hover:bg-red-900/40 text-red-400 border border-red-900/50 px-3 py-1.5 rounded text-xs font-mono transition-all">
+                            <button onclick="restartApp()"
+                                class="bg-red-900/20 hover:bg-red-900/40 text-red-400 border border-red-900/50 px-3 py-1.5 rounded text-xs font-mono transition-all">
                                 <i class="fa-solid fa-rotate-left"></i> reset_system()
                             </button>
                             <div class="h-6 w-px bg-slate-700"></div>
-                            <select id="themeSelect" onchange="changeTheme()" class="bg-slate-950 border border-slate-700 text-slate-300 text-xs rounded p-1.5 font-mono">
+                            <select id="themeSelect" onchange="changeTheme()"
+                                class="bg-slate-950 border border-slate-700 text-slate-300 text-xs rounded p-1.5 font-mono">
                                 <option value="tech">theme: terminal.css</option>
                                 <option value="startup">theme: startup.css</option>
                                 <option value="modern">theme: modern.css</option>
@@ -103,11 +133,14 @@
                             </select>
                         </div>
                         <div class="flex gap-2">
-                            <button onclick="copyHtml()" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-1.5 rounded text-xs font-mono border border-slate-600">copy_html()</button>
-                            <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-1.5 rounded text-xs font-mono shadow-md">export_pdf()</button>
+                            <button onclick="copyHtml()"
+                                class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-1.5 rounded text-xs font-mono border border-slate-600">copy_html()</button>
+                            <button onclick="window.print()"
+                                class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-1.5 rounded text-xs font-mono shadow-md">export_pdf()</button>
                         </div>
                     </div>
-                    <div class="flex-grow bg-slate-950 rounded border border-slate-700 overflow-y-auto p-4 flex justify-center">
+                    <div
+                        class="flex-grow bg-slate-950 rounded border border-slate-700 overflow-y-auto p-4 flex justify-center">
                         <div id="resume-preview-wrapper" class="bg-white shadow-2xl w-full max-w-4xl text-gray-900">
                             <!-- Renderizado via JS -->
                         </div>
@@ -125,4 +158,5 @@
     <script src="./assets/js/templateRenderer.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
